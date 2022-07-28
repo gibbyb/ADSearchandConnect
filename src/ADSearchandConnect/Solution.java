@@ -201,10 +201,10 @@ public class Solution
     private static void writeHistory(File historyTxt, Computer PC) throws IOException
     {
         BufferedWriter histWriter = new BufferedWriter(new FileWriter(historyTxt, true));
-        histWriter.write("\n\nDate & Time\t PC Name \t PC Description");
-        histWriter.write("\n-----------------------------------------------------------------------");
-        histWriter.write("\n" + PC.getDateNtime() + "\t " + PC.getPCname() + "\t " + PC.getDescription());
-        histWriter.write("\n-----------------------------------------------------------------------");
+        histWriter.write("\n\n\tDate & Time\t PC Name \t PC Description");
+        histWriter.write("\n\t-----------------------------------------------------------------------");
+        histWriter.write("\n\t" + PC.getDateNtime() + "\t " + PC.getPCname() + "\t " + PC.getDescription());
+        histWriter.write("\n\t-----------------------------------------------------------------------");
         histWriter.close();
     }
 
