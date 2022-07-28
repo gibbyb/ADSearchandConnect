@@ -244,7 +244,7 @@ public class Solution
 
             powerShell.executeCommand(setDescriptionCmd);
 
-            System.out.println("\t" + PCname + " description changed to \"" + description + "\"");
+            System.out.println(PCname + " description changed to \"" + description + "\"");
         }
     }
 
