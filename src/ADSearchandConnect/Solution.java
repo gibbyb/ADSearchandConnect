@@ -46,7 +46,6 @@ public class Solution
                 switch (input)
                 {
                     case "":
-                        run = false; break;
                     case "n":
                         run = false; break;
                     default:
@@ -125,18 +124,18 @@ public class Solution
     /* printPCInfo prints out our Computer objects stored after our search. */
     private static void printPCs(ArrayList<Computer> allPCs)
     {
-        System.out.println("    PC Name\t|\tPC Description");
-        System.out.println("--------------------------------------------------");
+        System.out.println("    PC Name\t\tPC Description");
+        System.out.println("----------------------------------------------------------");
         int i = 1;
         for (Computer PC : allPCs)
         {
             if (i<10)
-                System.out.println(" " + i + ". " + PC.getPCname() + "\t|\t" + PC.getDescription());
+                System.out.println(" " + i + ". " + PC.getPCname() + "\t\t" + PC.getDescription());
             else
-                System.out.println(i + ". " + PC.getPCname() + "\t|\t" + PC.getDescription());
+                System.out.println(i + ". " + PC.getPCname() + "\t\t" + PC.getDescription());
             i++;
         }
-        System.out.println("--------------------------------------------------");
+        System.out.println("----------------------------------------------------------");
     }
 
     /* The selectPC function prompts the user to select a PC from the list to connect to. If there is only one PC,
@@ -216,6 +215,8 @@ public class Solution
         System.out.print(".\n");
     }
 
+    /* Function called after connecting to PC to allow the user to fix any errors
+     * in the description if needed for any future searches. */
     private static void changeDescription(String PCname, PowerShell powerShell) throws IOException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -246,6 +247,15 @@ public class Solution
 
             System.out.println(PCname + " description changed to \"" + description + "\"");
         }
+        System.out.print("Open Track-it to create ticket? ");
+        input = reader.readLine();
+        if (input.equalsIgnoreCase("y") || input.equals("1"))
+        {
+            Runtime rt = Runtime.getRuntime();
+            String url = "http://trackit/TrackIt/Account/LogIn?ReturnUrl=%2fTrackIt";
+            rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
+        }
+
     }
 
     /* Very much self-explanatory */
@@ -268,9 +278,10 @@ public class Solution
         System.out.println("╚═██╔═╝██║  ██╗██║  ██║██║╚████║██║╚████║██╔══╝  ██║  ██╗   ██║   ");
         System.out.println("  ╚═╝  ╚█████╔╝╚█████╔╝██║ ╚███║██║ ╚███║███████╗╚█████╔╝   ██║   ");
         System.out.println(" ▓█▀▀▀▀▀╚════╝  ╚════╝ ╚═╝  ╚══╝╚═╝  ╚══╝╚══════╝ ╚════╝    ╚═╝   ");
-        System.out.println(" ▓█░░▄░░▄░░░█▓ █████  █ █ █▀▀ █▀█ █▀ █ █▀█ █▄ █   ▄█   █▀█        ");
-        System.out.println(" ▓█▄▄▄▄▄▄▄▄▄█▓ █▄▄▄█  ▀▄▀ ██▄ █▀▄ ▄█ █ █▄█ █ ▀█    █ ▄ █▄█        ");
+        System.out.println(" ▓█░░▄░░▄░░░█▓ █████  █ █ █▀▀ █▀█ █▀ █ █▀█ █▄ █   ▄█   █▀█ ▄█     ");
+        System.out.println(" ▓█▄▄▄▄▄▄▄▄▄█▓ █▄▄▄█  ▀▄▀ ██▄ █▀▄ ▄█ █ █▄█ █ ▀█    █ ▄ █▄█  █     ");
         System.out.println("    ▄▄███▄▄    █████                                              ");
+
     }
 
 
