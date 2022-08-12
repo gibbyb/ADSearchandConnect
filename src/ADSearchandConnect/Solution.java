@@ -74,7 +74,7 @@ public class Solution
     private static String getInput() throws IOException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("\nEnter keyword: ");
+        System.out.print("\n\nEnter keyword: ");
         return reader.readLine();
     }
 
@@ -85,8 +85,15 @@ public class Solution
     private static void searchAD(String input, ArrayList<Computer> allPCs, PowerShell powerShell)
     {
         String keyword = "description";
+
         if (input.matches("\\d+") || input.matches("\\w\\w\\d+") || input.matches("\\w\\w"))
             keyword = "name";
+
+        if (input.charAt(0) == '$')
+        {
+            keyword = "name";
+            input = input.substring(1);
+        }
 
         String nameSearch = "(Get-ADComputer -Filter '" + keyword + " -like \"*" + input +
                 "*\"' | Select Name | Select-String -Pattern \"\\w+\\d\" -List).Matches.Value";
