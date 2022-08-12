@@ -255,13 +255,18 @@ public class Solution
             String url = "http://trackit/TrackIt/Account/LogIn?ReturnUrl=%2fTrackIt";
             rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
         }
+        else
+        {
+            System.out.println("Write a summary of support details for Track-it.\n");
+            input = reader.readLine();
+        }
 
     }
 
     /* Very much self-explanatory */
     private static void printTitle()
     {
-        System.out.println("");
+        System.out.println();
         System.out.println("                                             ▄▀▄     ▄▀▄          ");
         System.out.println("    █▀▀ █ █▄▄ █▄▄ █▄█ █ █▀                  ▄█░░▀▀▀▀▀░░█▄          ");
         System.out.println("    █▄█ █ █▄█ █▄█  █    ▄█              ▄▄  █░░░░░░░░░░░█  ▄▄     ");
@@ -278,11 +283,10 @@ public class Solution
         System.out.println("╚═██╔═╝██║  ██╗██║  ██║██║╚████║██║╚████║██╔══╝  ██║  ██╗   ██║   ");
         System.out.println("  ╚═╝  ╚█████╔╝╚█████╔╝██║ ╚███║██║ ╚███║███████╗╚█████╔╝   ██║   ");
         System.out.println(" ▓█▀▀▀▀▀╚════╝  ╚════╝ ╚═╝  ╚══╝╚═╝  ╚══╝╚══════╝ ╚════╝    ╚═╝   ");
-        System.out.println(" ▓█░░▄░░▄░░░█▓ █████  █ █ █▀▀ █▀█ █▀ █ █▀█ █▄ █   ▄█   █▀█ ▄█     ");
-        System.out.println(" ▓█▄▄▄▄▄▄▄▄▄█▓ █▄▄▄█  ▀▄▀ ██▄ █▀▄ ▄█ █ █▄█ █ ▀█    █ ▄ █▄█  █     ");
+        System.out.println(" ▓█░░▄░░▄░░░█▓ █████  █ █ █▀▀ █▀█ █▀ █ █▀█ █▄ █   ▄█   █▀█ ▀█     ");
+        System.out.println(" ▓█▄▄▄▄▄▄▄▄▄█▓ █▄▄▄█  ▀▄▀ ██▄ █▀▄ ▄█ █ █▄█ █ ▀█    █ ▄ █▄█ █▄     ");
         System.out.println("    ▄▄███▄▄    █████                                              ");
 
     }
-
-
+    
 }
