@@ -43,6 +43,6 @@ the ADSearchandConnect jar file, and type in
 "java -jar ADSearchandConnect.jar"
 
 That's it! 
-:) :)
+
 
 
