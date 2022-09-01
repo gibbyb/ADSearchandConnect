@@ -53,6 +53,14 @@ public class Solution
                         if (allPCs.isEmpty())
                         { System.out.println("No results found!"); break; }
                         printPCs(allPCs);
+                        if (allPCs.size() == 1)
+                        {
+
+                            connectToPC(allPCs.get(0).getPCname(), powerShell);
+                            changeDescription(allPCs.get(0).getPCname(), powerShell);
+                            allPCs.clear();
+                            continue;
+                        }
                         String PCname = selectPC(allPCs, historyTxt);
                         if (!(PCname.equals("Unknown")))
                         {
@@ -125,7 +133,6 @@ public class Solution
                 allPCs.add(PC);
             }
         }
-
     }
 
     /* printPCInfo prints out our Computer objects stored after our search. */
@@ -290,8 +297,8 @@ public class Solution
         System.out.println("╚═██╔═╝██║  ██╗██║  ██║██║╚████║██║╚████║██╔══╝  ██║  ██╗   ██║   ");
         System.out.println("  ╚═╝  ╚█████╔╝╚█████╔╝██║ ╚███║██║ ╚███║███████╗╚█████╔╝   ██║   ");
         System.out.println(" ▓█▀▀▀▀▀╚════╝  ╚════╝ ╚═╝  ╚══╝╚═╝  ╚══╝╚══════╝ ╚════╝    ╚═╝   ");
-        System.out.println(" ▓█░░▄░░▄░░░█▓ █████  █ █ █▀▀ █▀█ █▀ █ █▀█ █▄ █   ▄█   █▀█ ▀█     ");
-        System.out.println(" ▓█▄▄▄▄▄▄▄▄▄█▓ █▄▄▄█  ▀▄▀ ██▄ █▀▄ ▄█ █ █▄█ █ ▀█    █ ▄ █▄█ █▄     ");
+        System.out.println(" ▓█░░▄░░▄░░░█▓ █████  █ █ █▀▀ █▀█ █▀ █ █▀█ █▄ █   ▄█   █▀█ █▄█     ");
+        System.out.println(" ▓█▄▄▄▄▄▄▄▄▄█▓ █▄▄▄█  ▀▄▀ ██▄ █▀▄ ▄█ █ █▄█ █ ▀█    █ ▄ █▄█   █     ");
         System.out.println("    ▄▄███▄▄    █████                                              ");
 
     }
