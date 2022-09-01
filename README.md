@@ -1,6 +1,6 @@
 Active Directory PC Search & Connect is a tool created for the City
 of Gulfport IT employees. It requires a few dependancies such as 
-Powershell, Dameware, and Track-it to  worl completely as intended. 
+Powershell, Dameware, and Track-it to  work completely as intended. 
 In fact, this application is very specifically designed for the City 
 of Gulfport and probably will not work completely correctly outside 
 of its intended use. 
