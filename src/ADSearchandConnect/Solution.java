@@ -51,7 +51,7 @@ public class Solution
                     default:
                         searchAD(input, allPCs, powerShell);
                         if (allPCs.isEmpty())
-                        { System.out.println("No results found!"); break; }
+                        { System.out.println("No results found."); break; }
                         printPCs(allPCs);
                         if (allPCs.size() == 1)
                         {
